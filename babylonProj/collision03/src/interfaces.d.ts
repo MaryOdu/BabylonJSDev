@@ -11,6 +11,8 @@ import {
     scene: Scene;
     audio: Sound;
     lightHemispheric: HemisphericLight;
+    box1 :Mesh;
+    box2: Mesh;
     camera: Camera;
     player: Promise<void | ISceneLoaderAsyncResult>;
     ground: Mesh;
