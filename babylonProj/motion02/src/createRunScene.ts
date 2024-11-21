@@ -1,4 +1,5 @@
-import {AbstractMesh, CubeTexture,ActionManager, _ENVTextureLoader} from "@babylonjs/core";
+
+import {AbstractMesh, CubeTexture,ActionManager, Mesh, _ENVTextureLoader} from "@babylonjs/core";
 import { SceneData } from "./interfaces";
 import {
   keyActionManager,
@@ -6,7 +7,7 @@ import {
   keyDownHeld,
   getKeyDown,
 } from "./keyActionManager";
-//import { characterActionManager } from "./characterActionManager";
+import { characterActionManager } from "./characterActionManager";
 
 import "@babylonjs/core/Materials/Textures/Loaders/envTextureLoader";
 import "@babylonjs/core/Helpers/sceneHelpers";
@@ -60,13 +61,15 @@ export default function createRunScene(runScene: SceneData) {
     });
   });
 
-  // add incremental action to player
-  /*runScene.player.then((result) => {  
+  //add incremental action to player
+  runScene.player.then((result) => {  
     let characterMesh = result!.meshes[0];
     characterActionManager(runScene.scene, characterMesh as Mesh);
-  }); */
-  
+  });
+
   runScene.scene.onAfterRenderObservable.add(() => {});
+
+
 }
 
 
