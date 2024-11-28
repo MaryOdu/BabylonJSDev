@@ -1,5 +1,5 @@
 # Documentation for 5th element
-playing with it 
+playing with it
 
 ```html
 <!DOCTYPE html>
