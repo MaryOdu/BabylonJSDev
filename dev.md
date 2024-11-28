@@ -1,0 +1,14 @@
+# Documentation for 5th element
+playing with it 
+
+```html
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title> Collision with a player - Element 3 </title>
+    </head>
+    <body> </body>
+</html>
+<script type="module" src="./src/index.ts"></script>
+```

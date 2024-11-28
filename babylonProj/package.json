@@ -18,8 +18,14 @@
     "rotationbuild": "tsc && vite build rotation",
     "rotationpreview": "vite preview rotation --host",
 
-    "villagebuild": "tsc && vite build rotation",
-    "villagepreview": "vite preview rotation --host"
+    "village-Element2build": "tsc && vite build village-Element2",
+    "village-Element2preview": "vite preview village-Element2 --host",
+
+    "collision-Element3": "tsc && vite build collision-Element3",
+    "collision-Element3preview": "vite preview collision-Element3 --host",
+
+    "gui-Element4": "tsc && vite build gui-Element4",
+    "gui-Element4preview": "vite preview gui-Element4 --host"
 
   },
   "devDependencies": {
