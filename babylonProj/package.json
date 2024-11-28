@@ -18,17 +18,20 @@
     "rotationbuild": "tsc && vite build rotation",
     "rotationpreview": "vite preview rotation --host",
 
-    "shapes-Element1build": "tsc && vite build shapes-Element1",
+    "shapes-Element1build": "vite build shapes-Element1",
     "shapes-Element1preview": "vite preview shapes-Element1 --host",
 
-    "village-Element2build": "tsc && vite build village-Element2",
-    "village-Element2preview": "vite preview village-Element2 --host",
+    "village-Element2build": "vite build village-Element2",
+    "village-Element2preview": "preview village-Element2 --host",
 
     "collision-Element3build": "vite build collision-Element3",
     "collision-Element3preview": "preview collision-Element3 --host",
 
-    "gui-Element4build": "tsc && vite build gui-Element4",
-    "gui-Element4preview": "vite preview gui-Element4 --host"
+    "gui-Element4build": "vite build gui-Element4",
+    "gui-Element4preview": "preview gui-Element4 --host",
+
+    "gui-Element5build": "vite build gui-Element5",
+    "gui-Element5preview": "preview gui-Element5 --host"
 
   },
   "devDependencies": {
