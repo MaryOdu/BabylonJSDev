@@ -56,8 +56,6 @@ function createGround(scene: Scene) {
   return ground;
 }
 
-
-
 function createHemisphericLight(scene: Scene) {
   const light = new HemisphericLight(
     "light",

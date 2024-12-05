@@ -27,7 +27,7 @@ import {
     cylinder.position.z = 1;
   
     var texture = new StandardMaterial("reflective", scene);
-    texture.ambientTexture = new Texture("./assets/textures/reflectivity.png", scene);
+    texture.ambientTexture = new Texture("./assets/reflectivity.png", scene);
     texture.diffuseColor = new Color3(1, 1, 1);
     cylinder.material = texture;
     return cylinder;
@@ -100,6 +100,7 @@ import {
       light?: Light;
       sphere?: Mesh;
       ground?: Mesh;
+      sky?: Mesh;
       camera?: Camera;
     }
   
@@ -111,5 +112,6 @@ import {
     that.sphere = createSphere(that.scene);
     that.ground = createGround(that.scene);
     that.camera = createArcRotateCamera(that.scene);
+    that.sky = createSky(that.scene);
     return that;
   }

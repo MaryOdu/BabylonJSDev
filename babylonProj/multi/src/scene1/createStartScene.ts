@@ -8,18 +8,19 @@ import {
     MeshBuilder,
     Mesh,
     Light,
-    StandardMaterial,
     Camera,
-    Engine, Color3, Texture, CubeTexture
+    Engine,
+    StandardMaterial,
+    Texture,
+    Color3, CubeTexture
   } from "@babylonjs/core";
 
-  
+
   function createBox(scene: Scene) {
     let box = MeshBuilder.CreateBox("box",{size: 1}, scene);
     box.position.y = 3;
     return box;
   }
-
   
   function createLight(scene: Scene) {
     const light = new HemisphericLight("light", new Vector3(0, 1, 0), scene);
@@ -87,7 +88,9 @@ import {
       light?: Light;
       sphere?: Mesh;
       ground?: Mesh;
+      sky?: Mesh;
       camera?: Camera;
+
     }
   
     let that: SceneData = { scene: new Scene(engine) };
@@ -98,5 +101,6 @@ import {
     that.sphere = createSphere(that.scene);
     that.ground = createGround(that.scene);
     that.camera = createArcRotateCamera(that.scene);
+    that.sky = createSky(that.scene);
     return that;
   }
