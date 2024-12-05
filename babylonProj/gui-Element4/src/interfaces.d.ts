@@ -4,19 +4,17 @@ import {
     Mesh,
     HemisphericLight,
     Camera,
-    GroundMesh,
+    ISceneLoaderAsyncResult,
   } from "@babylonjs/core";
   
-  import {Button }  from "@babylonjs/gui/2D";
-
-export interface SceneData {
-  scene: Scene;
-  ground:GroundMesh;
-  sky: Mesh;
-  lightHemispheric: HemisphericLight;
-  camera: Camera;
-}
-
-export interface GUIData {
-  button1:Button;
-}
+  export interface SceneData {
+    scene: Scene;
+    audio: Sound;
+    lightHemispheric: HemisphericLight;
+    box1 :Mesh;
+    box2: Mesh;
+    camera: Camera;
+    player: Promise<void | ISceneLoaderAsyncResult>;
+    ground: Mesh;
+  }
+  
