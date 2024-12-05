@@ -12,7 +12,7 @@ import {
     Engine,
     StandardMaterial,
     Texture,
-    Color3
+    Color3, CubeTexture
   } from "@babylonjs/core";
   
   
@@ -27,7 +27,7 @@ import {
     cylinder.position.z = 1;
   
     var texture = new StandardMaterial("reflective", scene);
-    texture.ambientTexture = new Texture("./assets/reflectivity.png", scene);
+    texture.ambientTexture = new Texture("./assets/textures/reflectivity.png", scene);
     texture.diffuseColor = new Color3(1, 1, 1);
     cylinder.material = texture;
     return cylinder;
@@ -58,6 +58,23 @@ import {
     );
     return ground;
   }
+
+  
+  function createSky(scene: Scene) {
+    const skybox = MeshBuilder.CreateBox("skyBox", { size: 150 }, scene);
+    const skyboxMaterial = new StandardMaterial("skyBox", scene);
+    skyboxMaterial.backFaceCulling = false;
+    skyboxMaterial.reflectionTexture = new CubeTexture(
+      "./src/assets/textures/skybox/skybox4",
+      scene
+    );
+    skyboxMaterial.reflectionTexture.coordinatesMode = Texture.SKYBOX_MODE;
+    skyboxMaterial.diffuseColor = new Color3(0, 0, 0);
+    skyboxMaterial.specularColor = new Color3(0, 0, 0);
+    skybox.material = skyboxMaterial;
+    return skybox;
+  }
+  
   
   function createArcRotateCamera(scene: Scene) {
     let camAlpha = -Math.PI / 2,
