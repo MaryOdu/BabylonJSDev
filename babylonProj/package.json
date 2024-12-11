@@ -27,11 +27,11 @@
     "collision-Element3build": "vite build collision-Element3",
     "collision-Element3preview": "preview collision-Element3 --host",
 
-    "guibuild": "vite build gui",
-    "guipreview": "preview gui --host",
-
     "gui-Element4build": "vite build gui-Element4",
-    "gui-Element4preview": "preview gui-Element4 --host"
+    "gui-Element4preview": "preview gui-Element4 --host",
+
+    "guibuild": "vite build gui",
+    "guipreview": "preview gui --host"
 
   },
   "devDependencies": {
