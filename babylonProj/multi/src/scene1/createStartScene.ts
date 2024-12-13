@@ -1,5 +1,6 @@
 // import "@babylonjs/core/Debug/debugLayer";
 // import "@babylonjs/inspector";
+
 import {
     Scene,
     ArcRotateCamera,
@@ -12,10 +13,28 @@ import {
     Engine,
     StandardMaterial,
     Texture,
-    Color3, CubeTexture
+    Color3, CubeTexture, Sound
   } from "@babylonjs/core";
 
-
+  function backgroundMusic(scene: Scene): Sound{
+    let music = new Sound("music", "./assets/audio/MainMenu.mp3", scene,  null ,
+     {
+        loop: true,
+        autoplay: true
+    });
+  
+    Engine.audioEngine!.useCustomUnlockedButton = true;
+  
+    // Unlock audio on first user interaction.
+    window.addEventListener('click', () => {
+      if(!Engine.audioEngine!.unlocked){
+          Engine.audioEngine!.unlock();
+      }
+  }, { once: true });
+    return music;
+  }
+  
+  
   function createBox(scene: Scene) {
     let box = MeshBuilder.CreateBox("box",{size: 1}, scene);
     box.position.y = 3;
@@ -53,7 +72,7 @@ import {
     const skyboxMaterial = new StandardMaterial("skyBox", scene);
     skyboxMaterial.backFaceCulling = false;
     skyboxMaterial.reflectionTexture = new CubeTexture(
-      "./src/assets/textures/skybox/skybox4",
+      "./assets/textures/skybox/skybox4",
       scene
     );
     skyboxMaterial.reflectionTexture.coordinatesMode = Texture.SKYBOX_MODE;
@@ -62,7 +81,6 @@ import {
     skybox.material = skyboxMaterial;
     return skybox;
   }
-
 
   function createArcRotateCamera(scene: Scene) {
     let camAlpha = -Math.PI / 2,
@@ -84,6 +102,7 @@ import {
   export default function createStartScene(engine: Engine) {
     interface SceneData {
       scene: Scene;
+      audio?: Sound;
       box?: Mesh;
       light?: Light;
       sphere?: Mesh;
@@ -96,6 +115,7 @@ import {
     let that: SceneData = { scene: new Scene(engine) };
     // that.scene.debugLayer.show();
   
+    that.audio = backgroundMusic(that.scene);
     that.box = createBox(that.scene);
     that.light = createLight(that.scene);
     that.sphere = createSphere(that.scene);
@@ -104,3 +124,6 @@ import {
     that.sky = createSky(that.scene);
     return that;
   }
+    
+
+    

@@ -115,3 +115,4 @@ import {
     that.sky = createSky(that.scene);
     return that;
   }
+

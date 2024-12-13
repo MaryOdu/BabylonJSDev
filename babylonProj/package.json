@@ -31,7 +31,10 @@
     "gui-Element4preview": "preview gui-Element4 --host",
 
     "guibuild": "vite build gui",
-    "guipreview": "preview gui --host"
+    "guipreview": "preview gui --host",
+
+    "multibuild": "vite build multi",
+    "multipreview": "preview multi --host"
 
   },
   "devDependencies": {
